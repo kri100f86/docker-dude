@@ -6,7 +6,7 @@ ENV DUDE_STUFF=dude-install-$DUDE_VERSION.exe
 
 COPY installer/$DUDE_STUFF /
 
-RUN dpkg --add-architecture i386 \
+RUN dpkg --add-architecture arm64 \
   && apt-get -qq update \
   && apt-get -qq --option APT::Immediate-Configure=false install --no-install-recommends \
        netcat \
