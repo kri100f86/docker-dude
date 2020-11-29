@@ -13,7 +13,9 @@ RUN dpkg --add-architecture arm64 \
        p7zip-full \
        wine32 \
        xvfb \
-       > /dev/null \
+       > /dev/null 
+
+RUN dpkg --add-architecture i386 \
   && 7z x -o/dude \
        -x!uninstall.exe \
        -x!data/files/*.ttf \
